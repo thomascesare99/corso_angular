@@ -1,0 +1,4 @@
+@for (person of people; track $index) {
+  <p [style.color]="person.color">Nome: {{ person.name }}, Età: {{ person.age }}</p>
+}
+<button mat-raised-button color="warn" (click)="selectPerson(this.people[0])">Mario</button>

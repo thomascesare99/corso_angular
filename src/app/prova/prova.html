@@ -25,7 +25,65 @@
   </mat-form-field>
 
   <mat-form-field class="example-full-width">
-    <mat-label>Leave a comment</mat-label>
-    <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+    <mat-label> {{name}} </mat-label>
+    <textarea
+      matInput
+      [(ngModel)]="name"
+      [ngModelOptions]="{standalone: true}"></textarea> <!-- Two-way binding with 'title' property: ngModel. Need to define the 'name' property in the component class -->
+  </mat-form-field>   <!-- Need the ngModelOptions: standalone: true to behave correctly -->
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Example with signals</mat-label>
+    <textarea
+      matInput
+      [value]="signal()"
+      (input)="onSignalInput($event)"
+      ></textarea> <!-- Two-way binding with signals -->
   </mat-form-field>
 </form>
+
+<p class="example-description">
+  Con nGmodel: {{ name }} <!-- Displaying the value of 'title' property -->
+</p>
+<p class="example-description">
+  Con signal: {{ signal() }} <!-- Displaying the value of the signal -->
+</p>
+
+@if (isVisible) {
+  <p>Questo paragrafo è visibile.</p>
+}
+@else {
+  <p>Questo paragrafo non è visibile.</p>
+}
+
+
+<div class="cards-grid">
+  @for (dog of dogs; track $index) {
+    <mat-card class="example-card" appearance="outlined">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>{{ dog.name.toUpperCase() }}</mat-card-title>
+        <mat-card-subtitle>{{ dog.breed }}</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image [src]="dog.image || immagine" alt="Photo of {{ dog.name }}">
+      <mat-card-content>
+        <p>
+          {{ dog.description }}
+        </p>
+        @if (dog.isOnline) {
+          <span class="status online" title="Online" aria-label="Online"></span>
+        }
+        @else {
+          <span class="status offline" title="Offline" aria-label="Offline"></span>
+        }
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="primary" (click)="onClick()">LIKE</button>
+        <button mat-raised-button color="primary" [disabled]="isDisabled">SHARE</button>
+      </mat-card-actions>
+    </mat-card>
+  }
+  @empty {
+    <p><i>Nessun cane disponibile.</i></p>
+  }
+</div>

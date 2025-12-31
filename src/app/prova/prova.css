@@ -60,3 +60,44 @@ mat-divider {
   margin-bottom: 24px; /* adjust as needed */
 }
 
+/* Status indicator dots */
+.status {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  vertical-align: middle;
+  margin-left: 8px;
+}
+.status.online {
+  background-color: #4caf50; /* green */
+}
+.status.offline {
+  background-color: #f44336; /* red */
+}
+/* Accessibility: visually hidden text for screen readers (optional use)
+   Add `<span class="sr-only">Online</span>` next to the dot if needed */
+.sr-only {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+
+/* Grid for dog cards */
+.cards-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: flex-start;
+}
+.cards-grid .example-card {
+  width: 320px; /* adjust per card width */
+  margin-bottom: 0; /* spacing handled by gap */
+}

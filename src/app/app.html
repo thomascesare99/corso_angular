@@ -1,4 +1,6 @@
 <body class="mat-typography">
-<app-prova></app-prova>  <!-- Using the 'app-prova' component multiple times in the app template -->
+<!-- app-prova></app-prova>  Using the 'app-prova' component multiple times in the app template -->
+<app-figlio [people]="appPeople" (personSelected)="onPersonReceived($event)"></app-figlio> <!-- Using the 'app-figlio' component and passing 'appPeople' data to it -->
 
+<button mat-raised-button color="accent" (click)="onClick()">Click me</button>
 </body>
