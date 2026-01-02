@@ -2,17 +2,26 @@ import { Component, signal } from "@angular/core";
 import { RouterOutlet } from "@angular/router";
 import { Prova } from "./prova/prova";
 import { Figlio } from "./figlio/figlio";
-
+import { Highlight } from "./direttive/highlight";
+import { UpperCasePipe, DatePipe } from "@angular/common";
+import { ProvaServizi } from "./prova-servizi/prova-servizi";
 @Component({
   // Decorator that defines this class as an Angular component
   selector: "app-root", // The HTML tag used to embed this component: found in index.html
-  imports: [Prova, Figlio], // Importing the Prova component and RouterOutlet for routing
+  imports: [Prova, Figlio, Highlight, UpperCasePipe, DatePipe, ProvaServizi], // Importing the Prova component and RouterOutlet for routing
   standalone: true, // Indicates that this is a standalone component
   templateUrl: "./app.html", // Path to the HTML template for this component: in this case the componet is the whole app
   styleUrl: "./app.css",
 })
 export class App {
   protected readonly title = signal("corso-angular");
+
+  today = Date.now();
+
+  colorDirective = 'purple';
+  changeHighlightColor(color: string) {
+    this.colorDirective = color; // Update the directive color based on user selection
+  }
 
   appPeople = [
     { name: 'Mario', age: 30, color: 'red' },

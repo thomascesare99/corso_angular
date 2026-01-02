@@ -1,6 +1,29 @@
 <body class="mat-typography">
 <!-- app-prova></app-prova>  Using the 'app-prova' component multiple times in the app template -->
-<app-figlio [people]="appPeople" (personSelected)="onPersonReceived($event)"></app-figlio> <!-- Using the 'app-figlio' component and passing 'appPeople' data to it -->
+
+
+
+<!--
+<app-figlio [people]="appPeople" (personSelected)="onPersonReceived($event)"></app-figlio>  Using the 'app-figlio' component and passing 'appPeople' data to it
 
 <button mat-raised-button color="accent" (click)="onClick()">Click me</button>
+
+<h2> Scegli il colore </h2>
+<div>
+  <input type="radio" name="highlightColor" (click)="changeHighlightColor('red')"> Red
+  <input type="radio" name="highlightColor" (click)="changeHighlightColor('blue')"> Blue
+  <input type="radio" name="highlightColor" (click)="changeHighlightColor('green')"> Green
+</div>
+
+<p [appHighlight]="colorDirective"> paragrafo con direttiva associata </p>
+
+
+<p> Ciao vi mostro cosa fanno le pipe {{title() | uppercase}}</p>
+<p> Cotnatore date: {{today}}</p>
+<p> Oggi è il: {{ today | date:'fullDate' }} </p>
+<p> Oggi è il: {{ today | date:'shortDate' }}</p>
+-->
+
+
+<app-prova-servizi></app-prova-servizi>  <!-- Using the 'app-prova-servizi' component to demonstrate service usage -->
 </body>
