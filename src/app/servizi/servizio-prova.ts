@@ -8,8 +8,17 @@ export class ServizioProva {
   servicePeople = [
     { name: 'Anna', age: 27, color: 'yellow' },
     { name: 'Bob', age: 32, color: 'blue' },
-    { name: 'Cathy', age: 29, color: 'orange' }
+    { name: 'Cathy', age: 29, color: 'orange' },
+    { name: 'David', age: 35, color: 'purple' },
+    { name: 'Eva', age: 24, color: 'pink' }
   ];
 
+  getPerson(index: number) {
+    return this.servicePeople[index];
+  }
+
+  getAllPeople() {
+    return this.servicePeople;
+  }
 
 }

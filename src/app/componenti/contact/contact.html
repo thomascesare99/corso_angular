@@ -1,0 +1,19 @@
+<div class="layout">
+  <!-- LEFT COLUMN -->
+  <div class="list">
+    <p>Elenco contatti:</p>
+
+    @for (person of people; track $index) {
+      <a routerLink="/contact/{{$index}}" class="contact-link">
+        <p [style.background-color]="person.color">
+          {{ person.name }}, {{ person.age }}
+        </p>
+      </a>
+    }
+  </div>
+
+  <!-- RIGHT COLUMN -->
+  <div class="detail">
+    <router-outlet></router-outlet>
+  </div>
+</div>

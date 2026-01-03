@@ -1,0 +1,28 @@
+.layout {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+/* LEFT: vertical stack (default block layout) */
+.list {
+  width: 300px;
+}
+
+/* RIGHT: detail panel */
+.detail {
+  flex: 1;
+  padding: 16px;
+  border-left: 1px solid #ddd;
+}
+
+.contact-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.contact-link p {
+  margin: 8px 0;
+  padding: 8px;
+  cursor: pointer;
+}

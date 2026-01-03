@@ -1,14 +1,31 @@
 import { Component, signal } from "@angular/core";
-import { RouterOutlet } from "@angular/router";
+import { RouterOutlet, RouterLink } from "@angular/router";
 import { Prova } from "./prova/prova";
 import { Figlio } from "./figlio/figlio";
 import { Highlight } from "./direttive/highlight";
 import { UpperCasePipe, DatePipe } from "@angular/common";
 import { ProvaServizi } from "./prova-servizi/prova-servizi";
+
+import { About } from "./componenti/about/about";
+import { Contact } from "./componenti/contact/contact";
+import { Contatto } from "./componenti/contatto/contatto";
+import { Home } from "./componenti/home/home";
+
 @Component({
   // Decorator that defines this class as an Angular component
   selector: "app-root", // The HTML tag used to embed this component: found in index.html
-  imports: [Prova, Figlio, Highlight, UpperCasePipe, DatePipe, ProvaServizi], // Importing the Prova component and RouterOutlet for routing
+  imports: [Prova,
+    Figlio,
+    Highlight,
+    UpperCasePipe,
+    DatePipe,
+    ProvaServizi,
+    About,
+    Contact,
+    Home,
+    Contatto,
+    RouterOutlet,
+    RouterLink],
   standalone: true, // Indicates that this is a standalone component
   templateUrl: "./app.html", // Path to the HTML template for this component: in this case the componet is the whole app
   styleUrl: "./app.css",
